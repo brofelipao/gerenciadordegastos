@@ -1,0 +1,7 @@
+Infra.Data - Projeto de infraestrutura voltado à conexão com o banco de dados. Deve conter as referências com o entity framework, migrations, classe de contexto e view models.
+
+Infra.Ioc - Projeto onde as configurações da injeção de dependências irá ficar.
+
+Problemas encontrados: não consegui fazer migration.
+Solução: instalar Microsoft.EntityFrameworkCore.Tools
+Continuei com o problema, foi necessário instalar o Microsoft.EntityFrameworkCore.Design tanto no meu projeto de inicialização, quanto no infra.data.
