@@ -8,19 +8,9 @@
         Expense Control
     </title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/GerenciamentoDeGastos.styles.css" asp-append-version="true" />
-    <link href="~/css/bootstrap5/bootstrap.min.css" rel="stylesheet" type="text/css" asp-append-version="true" />
-    <link href="~/css/select2.min.css" rel="stylesheet" type="text/css" asp-append-version="true" />
-    <link href="~/css/select2-bootstrap-5-theme.min.css" rel="stylesheet" type="text/css" asp-append-version="true" />
     <link href="~/css/noty.css" rel="stylesheet" type="text/css" asp-append-version="true" />
-    <link href="~/css/bootstrap-datepicker3.min.css" rel="stylesheet" type="text/css" asp-append-version="true" />
-    <link href="~/css/DataTables/dataTables.bootstrap5.css" rel="stylesheet" type="text/css" asp-append-version="true" />
-    <link href="~/css/DataTables/fixedColumns.dataTables.css" rel="stylesheet" type="text/css" asp-append-version="true" />
-    <link href="~/css/DataTables/select.dataTables.css" rel="stylesheet" type="text/css" asp-append-version="true" />
-    <link href="~/css/DataTables/datatables.bundle.css" rel="stylesheet" type="text/css" asp-append-version="true" />
     <link href="~/css/tooltipster.bundle.min.css" rel="stylesheet" type="text/css" asp-append-version="true" />
     <link href="~/css/site.css" rel="stylesheet" asp-append-version="true" />
-    <link href="~/css/default.css" rel="stylesheet" asp-append-version="true" />
 </head>
 <body>
     <header>
@@ -67,6 +57,22 @@
             &copy; 2025 - Expense Control
         </div>
     </footer>
+
+    <script>
+        var content = "@Url.Content("~/")";
+    </script>
+
+	<script src="~/js/bootstrap5/bootstrap.bundle.min.js"></script>
+	<script src="~/js/bootstrap5/bootstrap.bundle.js"></script>
+	<script src="~/js/bootstrap5/bootstrap.min.js"></script>
+	<script src="~/js/bootstrap5/bootstrap.js"></script>
+	<script src="~/lib/jquery/dist/jquery.min.js"></script>
+	<script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/js/jquery.mask.min.js" type="text/javascript" asp-append-version="true"></script>
+	<script src="~/js/jquery.maskedinput.js" type="text/javascript" asp-append-version="true"></script>
+	<script src="~/js/jquery.blockui.js"></script>
+	<script src="~/js/scripts.bundle.js"></script>
+	<script src="~/js/select2.full.min.js"></script>
     <script src="~/js/noty.min.js" type="text/javascript" asp-append-version="true"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script src="~/lib/jquery-ajax-unobtrusive/jquery.unobtrusive-ajax.min.js" asp-append-version="true"></script>
@@ -77,11 +83,6 @@
     
 
     @await RenderSectionAsync("Scripts", required: false)
-
-    <script>
-        var content = "@Url.Content("~/")";
-    </script>
-
 
 </body>
 </html>

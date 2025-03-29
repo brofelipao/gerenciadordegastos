@@ -20,5 +20,13 @@ namespace GerenciamentoDeGastos.Infra.Data.Repositories
         {
             return _dbSet.Where(c => c.PersonId == PersonId).ToList();
         }
+
+        public async Task<bool> Settle(int BankAccountId, char type, decimal Value)
+        {
+            var bank = _dbSet.Find(BankAccountId);
+            // Type C == Cost
+            bank.Balance = bank.Balance + (type == 'C' ? -1 : 1 * Value);
+            return await Save();
+        }
     }
 }

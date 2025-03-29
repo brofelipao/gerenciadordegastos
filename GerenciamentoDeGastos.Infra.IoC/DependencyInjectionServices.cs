@@ -12,6 +12,7 @@ namespace GerenciamentoDeGastos.Infra.IoC
         {
             service.AddScoped<LoginService>();
             service.AddScoped<BankAccountService>();
+            service.AddScoped<MovementService>();
         }
     }
 }

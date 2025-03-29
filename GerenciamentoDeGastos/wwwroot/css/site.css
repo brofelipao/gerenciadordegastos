@@ -104,3 +104,53 @@ a {
     a:hover {
         color: #79b8ff;
     }
+
+.form-control:disabled, .form-control[readonly] {
+    background-color: #1a222d !important;
+    color: #8b949e !important;
+    border-color: #30363d !important;
+    opacity: 1; /* Remove o efeito de opacidade padrão */
+}
+
+/* Para checkboxes/radios desabilitados */
+.form-check-input:disabled {
+    background-color: #1a222d;
+    border-color: #30363d;
+    opacity: 0.8;
+}
+
+    .form-check-input:disabled ~ .form-check-label {
+        color: #8b949e;
+    }
+
+/* Para selects desabilitados */
+.form-select:disabled {
+    background-color: #1a222d;
+    color: #8b949e;
+    border-color: #30363d;
+}
+
+/* Modal preta personalizada */
+.modal-dark-custom {
+    background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro semi-transparente */
+}
+
+    .modal-dark-custom .modal-content {
+        background-color: #000000; /* Preto puro */
+        color: #ffffff; /* Texto branco */
+        border: 1px solid #333; /* Borda escura */
+    }
+
+    .modal-dark-custom .modal-header {
+        border-bottom: 1px solid #333; /* Borda do cabeçalho */
+        background-color: #121212; /* Preto mais claro para o cabeçalho */
+    }
+
+    .modal-dark-custom .modal-footer {
+        border-top: 1px solid #333; /* Borda do rodapé */
+        background-color: #121212; /* Preto mais claro para o rodapé */
+    }
+
+    .modal-dark-custom .btn-close {
+        filter: invert(1); /* Inverte a cor do botão de fechar */
+    }

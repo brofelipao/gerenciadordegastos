@@ -20,7 +20,7 @@
 //if ($.fn.dataTable)
 //    $.fn.dataTable.ext.errMode = 'none';
 
-Inputmask.extendDefaults({ clearIncomplete: true, showMaskOnHover: false });
+//Inputmask.extendDefaults({ clearIncomplete: true, showMaskOnHover: false });
 $.fn.select2.defaults.set("language", "pt-BR");
 $.fn.select2.defaults.set("placeholder", "SELECIONE...");
 $.fn.select2.defaults.set("allowClear", true);

@@ -17,10 +17,12 @@ namespace GerenciamentoDeGastos.Infra.Data.EntitiesConfiguration
             builder.HasKey(x => x.Id);
             builder.Property(p => p.Amount).HasPrecision(13, 4);
             builder.Property(p => p.IsActive).HasDefaultValue(true);
+            builder.Property(p => p.IsInvoiced).HasDefaultValue(false);
             builder.Property(p => p.IsRecurrent).HasDefaultValue(false);
             builder.Property(p => p.Description).HasMaxLength(100);
 
             builder.HasOne(x => x.Person).WithMany(x => x.Movements).HasForeignKey(x => x.PersonId);
+            builder.HasOne(x => x.MovementFather).WithMany(x => x.MovementChildren).HasForeignKey(x => x.MovementIdFather);
             builder.HasOne(x => x.BankAccount).WithMany(x => x.Movements).HasForeignKey(x => x.BankAccountId);
         }
     }

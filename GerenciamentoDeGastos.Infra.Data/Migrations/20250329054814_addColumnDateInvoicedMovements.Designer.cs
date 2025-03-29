@@ -4,6 +4,7 @@ using GerenciamentoDeGastos.Infra.Data.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GerenciamentoDeGastos.Infra.Data.Migrations
 {
     [DbContext(typeof(ExpensesContext))]
-    partial class ExpensesContextModelSnapshot : ModelSnapshot
+    [Migration("20250329054814_addColumnDateInvoicedMovements")]
+    partial class addColumnDateInvoicedMovements
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -90,18 +93,10 @@ namespace GerenciamentoDeGastos.Infra.Data.Migrations
                         .HasColumnType("tinyint(1)")
                         .HasDefaultValue(true);
 
-                    b.Property<bool>("IsInvoiced")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("tinyint(1)")
-                        .HasDefaultValue(false);
-
                     b.Property<bool>("IsRecurrent")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("tinyint(1)")
                         .HasDefaultValue(false);
-
-                    b.Property<int?>("MovementIdFather")
-                        .HasColumnType("int");
 
                     b.Property<int>("PersonId")
                         .HasColumnType("int");
@@ -113,8 +108,6 @@ namespace GerenciamentoDeGastos.Infra.Data.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("BankAccountId");
-
-                    b.HasIndex("MovementIdFather");
 
                     b.HasIndex("PersonId");
 
@@ -198,10 +191,6 @@ namespace GerenciamentoDeGastos.Infra.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("GerenciamentoDeGastos.Domain.Entities.Movement", "MovementFather")
-                        .WithMany("MovementChildren")
-                        .HasForeignKey("MovementIdFather");
-
                     b.HasOne("GerenciamentoDeGastos.Domain.Entities.Person", "Person")
                         .WithMany("Movements")
                         .HasForeignKey("PersonId")
@@ -209,8 +198,6 @@ namespace GerenciamentoDeGastos.Infra.Data.Migrations
                         .IsRequired();
 
                     b.Navigation("BankAccount");
-
-                    b.Navigation("MovementFather");
 
                     b.Navigation("Person");
                 });
@@ -229,11 +216,6 @@ namespace GerenciamentoDeGastos.Infra.Data.Migrations
             modelBuilder.Entity("GerenciamentoDeGastos.Domain.Entities.BankAccount", b =>
                 {
                     b.Navigation("Movements");
-                });
-
-            modelBuilder.Entity("GerenciamentoDeGastos.Domain.Entities.Movement", b =>
-                {
-                    b.Navigation("MovementChildren");
                 });
 
             modelBuilder.Entity("GerenciamentoDeGastos.Domain.Entities.Person", b =>

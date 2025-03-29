@@ -38,12 +38,6 @@ namespace GerenciamentoDeGastos.MVC.Controllers
             }
         }
 
-        public async Task<IActionResult> Details(int id)
-        {
-            var ba = await _bankAccountService.Get(id);
-            return View(ba);
-        }
-
         public async Task<IActionResult> Edit(int id)
         {
             var ba = await _bankAccountService.Get(id);

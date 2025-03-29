@@ -17,7 +17,14 @@ namespace GerenciamentoDeGastos.Domain.Entities
         public char Type { get; set; }
         public bool IsRecurrent { get; set; }
         public bool IsActive { get; set; }
+        public bool IsInvoiced { get; set; }
+        public DateTime? DateInvoiced { get; set; }
+
+        // Movements recurrents will create simple movements
+        public int? MovementIdFather { get; set; }
         public virtual Person? Person { get; set; }
         public virtual BankAccount? BankAccount { get; set; }
+        public virtual Movement? MovementFather { get; set; }
+        public virtual ICollection<Movement>? MovementChildren { get; set; }
     }
 }

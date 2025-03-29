@@ -16,6 +16,7 @@ namespace GerenciamentoDeGastos.Infra.IoC
         {
             service.AddScoped<IUserRepository, UserRepository>();
             service.AddScoped<IBankAccountRepository, BankAccountRepository>();
+            service.AddScoped<IMovementRepository, MovementRepository>();
         }
     }
 }

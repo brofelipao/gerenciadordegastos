@@ -1,0 +1,59 @@
+﻿@using GerenciamentoDeGastos.Application.ViewModels;
+@model MovementViewModel
+
+@{
+    ViewData["Title"] = "View Movement";
+}
+
+<div class="row">
+    <div class="row">
+        <div class="col-md-4">
+            <label asp-for="Description" class="form-label"></label>
+            <input asp-for="Description" class="form-control" disabled />
+        </div>
+
+        <div class="col-md-4">
+            <label asp-for="Date" class="form-label"></label>
+            <input asp-for="Date" class="form-control" disabled />
+        </div>
+
+        <div class="col-md-4">
+            <label asp-for="Amount" class="form-label"></label>
+            <input asp-for="Amount" class="form-control" type="number" disabled />
+        </div>
+
+        <div class="col-md-4">
+            <label asp-for="Type" class="form-label"></label>
+            <select asp-for="Type" class="form-control" disabled>
+                <option value="R">Receipt</option>
+                <option value="C">Cost</option>
+            </select>
+        </div>
+
+        <div class="col-md-4">
+            <label asp-for="DateInvoiced" class="form-label"></label>
+            <input asp-for="DateInvoiced" class="form-control" disabled />
+        </div>
+
+        <div class="col-md-2">
+            <div class="mt-4">
+                <div class="form-check form-switch">
+                    <input asp-for="IsRecurrent" class="form-check-input ml-4" type="checkbox" role="switch" />
+                    <label asp-for="IsRecurrent" class="form-check-label" disabled></label>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-2">
+            <div class="mt-4">
+
+                <div class="form-check form-switch">
+                    <input asp-for="IsActive" class="form-check-input ml-4" type="checkbox" role="switch" />
+                    <label asp-for="IsActive" class="form-check-label" disabled></label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
