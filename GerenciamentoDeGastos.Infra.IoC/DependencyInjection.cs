@@ -12,14 +12,15 @@ namespace GerenciamentoDeGastos.Infra.IoC
 {
     public static class DependencyInjection
     {
-        public static IServiceCollection Configure(this IServiceCollection service, IConfiguration configuration)
+        public static void Configure(this IServiceCollection service, IConfiguration configuration)
         {
             var connectionString = configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
 
             service.AddDbContext<ExpensesContext>(options =>
                 options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
 
-            return service;
+            service.ConfigureRepositories(configuration);
+            service.ConfigureServices(configuration);
         }
     }
 }

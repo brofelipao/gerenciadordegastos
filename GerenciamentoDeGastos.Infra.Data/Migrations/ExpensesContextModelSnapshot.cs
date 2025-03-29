@@ -116,22 +116,22 @@ namespace GerenciamentoDeGastos.Infra.Data.Migrations
 
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<DateTime>("Birthday")
+                        .HasColumnType("datetime(6)");
+
                     b.Property<string>("CpjCnpj")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("varchar(50)");
 
-                    b.Property<DateTime>("DataNascimento")
-                        .HasColumnType("datetime(6)");
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("longtext");
 
-                    b.Property<string>("Nome")
+                    b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(200)
                         .HasColumnType("varchar(200)");
-
-                    b.Property<string>("Sobrenome")
-                        .IsRequired()
-                        .HasColumnType("longtext");
 
                     b.HasKey("Id");
 
@@ -148,7 +148,7 @@ namespace GerenciamentoDeGastos.Infra.Data.Migrations
                         .HasColumnType("tinyint(1)")
                         .HasDefaultValue(true);
 
-                    b.Property<DateTime>("LastAccess")
+                    b.Property<DateTime?>("LastAccess")
                         .HasColumnType("datetime(6)");
 
                     b.Property<string>("Login")

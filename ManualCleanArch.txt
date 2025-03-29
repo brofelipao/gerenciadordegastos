@@ -5,3 +5,12 @@ Infra.Ioc - Projeto onde as configurações da injeção de dependências irá ficar.
 Problemas encontrados: não consegui fazer migration.
 Solução: instalar Microsoft.EntityFrameworkCore.Tools
 Continuei com o problema, foi necessário instalar o Microsoft.EntityFrameworkCore.Design tanto no meu projeto de inicialização, quanto no infra.data.
+
+Lembrete git:
+
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin url
+git push -u origin main

@@ -1,12 +1,15 @@
 using System.Diagnostics;
 using GerenciamentoDeGastos.Models;
+using GerenciamentoDeGastos.MVC.Architecture;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GerenciamentoDeGastos.Controllers
 {
-    public class HomeController : Controller
+    [Authorize(Roles = "ADMIN")]
+    public class HomeController : GenericController
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ILogger<HomeController> _logger;   
 
         public HomeController(ILogger<HomeController> logger)
         {

@@ -14,7 +14,7 @@ namespace GerenciamentoDeGastos.Infra.Data.EntitiesConfiguration
         public void Configure(EntityTypeBuilder<Person> builder)
         {
             builder.HasKey(x => x.Id);
-            builder.Property(p => p.Nome).HasMaxLength(200);
+            builder.Property(p => p.Name).HasMaxLength(200);
             builder.Property(p => p.CpjCnpj).HasMaxLength(50);
         }
     }

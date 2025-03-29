@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewData["Title"] = "Login";
+    Layout = "_LayoutLogin";
+}
+
+<form asp-action="Login" asp-controller="Account" method="post">
+
+    <div class="row">
+        <div class="col-md-4">
+            <label for="Login" class="form-label"></label>
+            <input id="Login" name="Login" value="luiz" class="form-control" />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <label for="Password" class="form-label"></label>
+            <input id="Password" name="Password" class="form-control" type="password" />
+        </div>
+    </div>
+
+    <div class="row py-5">
+        <div class="col-md-4">
+            <button type="submit" class="btn btn-primary">Login</button>
+        </div>
+    </div>
+</form>
+

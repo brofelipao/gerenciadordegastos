@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\GerenciamentoDeGastos.Application\GerenciamentoDeGastos.Application.csproj" />
     <ProjectReference Include="..\GerenciamentoDeGastos.Infra.Data\GerenciamentoDeGastos.Infra.Data.csproj" />
   </ItemGroup>
 

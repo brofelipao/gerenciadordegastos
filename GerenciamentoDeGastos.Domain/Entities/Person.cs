@@ -10,11 +10,11 @@ namespace GerenciamentoDeGastos.Domain.Entities
     public class Person
     {
         public int Id { get; set; }
-        public string Nome { get; set; }
-        public string Sobrenome { get; set; }
+        public string Name { get; set; }
+        public string LastName { get; set; }
         public string CpjCnpj { get; set; }
         [DataType(DataType.Date)]
-        public DateTime DataNascimento { get; set; }
+        public DateTime Birthday { get; set; }
         public virtual User? User { get; set; }
         public virtual ICollection<Movement>? Movements { get; set; }
         public virtual ICollection<BankAccount>? BankAccounts { get; set; }
